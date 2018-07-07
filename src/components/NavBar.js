@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from "../axios";
 import {
     Navbar,
     NavbarBrand,
@@ -6,33 +7,59 @@ import {
     Collapse,
     NavItem,
     Nav,
-    DropdownMenu,
-    DropdownItem,
     NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
     Button,
 } from 'reactstrap';
 
+import ProfilePanel from '../components/ProfilePanel';
+
 class NavBar extends Component {
+    state = {
+        username: "",
+        password: "",
+        loginModalOpen: false
+    }
+
+    _onLogin = (submittedUsername, submittedPassword) => {
+        axios
+            .post("https://leapthew3-api.herokuapp.com/api/auth", {
+                username: submittedUsername,
+                password: submittedPassword
+            })
+            .then(response => {
+                this.setState({
+                    username: response.data.username,
+                    id: response.data.id
+                })
+                this._toggleLoginModal();
+            })
+            .catch(err => {
+                console.error(err);
+                this.setState({ errorMessage: "wrong username or password" });
+            });
+    }
+
+    _toggleLoginModal = () => {
+        this.setState({ loginModalOpen: !this.state.loginModalOpen })
+    }
+
     render() {
         return (
             <div>
                 <Navbar color="dark" dark expand="md">
                     <div className="navbar-flex">
                         <div className="navbar-flex-item">
-
-
-                            <NavbarBrand className="navbar-brand" href="/">
-                                <a href="/">
+                            <div className="navbar-button-group">
+                                <NavLink>
                                     <img src="/assets/images/upvote.png" alt="upvote" />
-                                </a>
-                                <Button className="leap-button">LEAP</Button>
-                                <a href="/">
+                                </NavLink>
+                                <NavbarBrand className="navbar-brand" href="/">
+                                    <Button className="leap-button">LEAP</Button>
+                                </NavbarBrand>
+                                <NavLink >
                                     <img src="/assets/images/downvote.png" alt="downvote" />
-                                </a>
-                            </NavbarBrand>
-
+                                </NavLink>
+                            </div>
                         </div>
 
                         <div className="navbar-flex-item--end">
@@ -45,19 +72,12 @@ class NavBar extends Component {
                                     <NavItem>
                                         <NavLink href="/">SAVE FOR LATER</NavLink>
                                     </NavItem>
-                                    <UncontrolledDropdown nav inNavbar>
-                                        <DropdownToggle nav caret>
-                                            JOHN DOE
-                                    </DropdownToggle>
-                                        <DropdownMenu right>
-                                            <DropdownItem>
-                                                Profile
-                                            </DropdownItem>
-                                            <DropdownItem>
-                                                Sign out
-                                            </DropdownItem>
-                                        </DropdownMenu>
-                                    </UncontrolledDropdown>
+                                    <ProfilePanel
+                                        username={this.state.username}
+                                        onLogin={this._onLogin}
+                                        isLoginModalOpen={this.state.loginModalOpen}
+                                        toggleLoginModal={this._toggleLoginModal}
+                                    />
                                 </Nav>
                             </Collapse>
                         </div>
@@ -67,6 +87,7 @@ class NavBar extends Component {
             </div>
         );
     }
+
 }
 
 export default NavBar;

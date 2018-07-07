@@ -16,8 +16,11 @@
     flex-flow: row wrap;
 }
 
-.navbar-flex-item {
+.navbar-flex-item{
     margin: auto;
+}
+
+.navbar-flex-item .navbar-button-group{
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -29,7 +32,7 @@
     justify-content: center;
     height: 100%;
 }
-.navbar-brand{
+.navbar-button-group{
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;

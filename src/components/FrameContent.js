@@ -6,8 +6,8 @@ class FrameContent extends Component {
         return (
             <div className="">
                 <div className="frame" >
-                    <Iframe
-                        url="https://techkids.vn//"
+                    {/* <Iframe
+                        url=""
                         width="100%"
                         height="600px"
                         display="initial"
@@ -15,7 +15,7 @@ class FrameContent extends Component {
                         frameborder="0"
                         allowFullScreen
                     >
-                    </Iframe>
+                    </Iframe> */}
                 </div>
             </div >
         );
