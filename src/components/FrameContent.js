@@ -6,7 +6,7 @@ class FrameContent extends Component {
         return (
             <div className="">
                 <div className="frame" >
-                    {/* <Iframe
+                    <Iframe
                         url=""
                         width="100%"
                         height="600px"
@@ -15,7 +15,7 @@ class FrameContent extends Component {
                         frameborder="0"
                         allowFullScreen
                     >
-                    </Iframe> */}
+                    </Iframe>
                 </div>
             </div >
         );

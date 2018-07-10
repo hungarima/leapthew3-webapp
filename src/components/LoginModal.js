@@ -22,6 +22,7 @@ class LoginModal extends Component {
                     Login
                 </ModalHeader>
                 <ModalBody>
+                    <h6 style={{color:"red"}}>{this.props.errorMessage ? this.props.errorMessage : ''}</h6>
                     {this.renderModalBody()}
                 </ModalBody>
             </Modal>

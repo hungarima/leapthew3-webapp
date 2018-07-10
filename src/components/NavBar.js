@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "../axios";
+
 import {
     Navbar,
     NavbarBrand,
@@ -21,8 +22,8 @@ class NavBar extends Component {
     }
 
     _onLogin = (submittedUsername, submittedPassword) => {
-        axios
-            .post("https://leapthew3-api.herokuapp.com/api/auth", {
+        axios 
+            .post("/api/auth", {
                 username: submittedUsername,
                 password: submittedPassword
             })
@@ -34,8 +35,8 @@ class NavBar extends Component {
                 this._toggleLoginModal();
             })
             .catch(err => {
-                console.error(err);
-                this.setState({ errorMessage: "wrong username or password" });
+                console.error(err.response.data.errMsg);
+                this.setState({ errorMessage: err.response.data.errMsg });
             });
     }
 
@@ -77,6 +78,7 @@ class NavBar extends Component {
                                         onLogin={this._onLogin}
                                         isLoginModalOpen={this.state.loginModalOpen}
                                         toggleLoginModal={this._toggleLoginModal}
+                                        errorMessage={this.state.errorMessage}
                                     />
                                 </Nav>
                             </Collapse>
