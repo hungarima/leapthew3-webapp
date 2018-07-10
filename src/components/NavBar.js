@@ -15,9 +15,8 @@ import {
 import ProfilePanel from '../components/ProfilePanel';
 
 class NavBar extends Component {
+    
     state = {
-        username: "",
-        password: "",
         loginModalOpen: false
     }
 
