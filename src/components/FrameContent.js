@@ -7,7 +7,7 @@ class FrameContent extends Component {
             <div className="">
                 <div className="frame" >
                     <Iframe
-                        url=""
+                        url="https://techkids.vn/"
                         width="100%"
                         height="600px"
                         display="initial"
