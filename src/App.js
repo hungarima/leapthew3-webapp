@@ -6,12 +6,13 @@ import axios from "./axios";
 
 
 class App extends Component {
-  componentDidMount() {
-    axios
-      .get("/api/url")
-      .then(data => console.log(data))
-      .catch(err => console.log(err))
-  }
+  // componentDidMount() {
+  //   axios
+  //     .get("/api/url")
+  //     .then(data => console.log(data))
+  //     .catch(err => console.log(err))
+  // }
+
   render() {
     return (
       <div className="App">

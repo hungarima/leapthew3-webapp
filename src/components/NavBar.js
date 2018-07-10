@@ -16,6 +16,13 @@ import ProfilePanel from '../components/ProfilePanel';
 
 class NavBar extends Component {
     
+    componentWillMount = () => {
+        axios.get("/api/auth").then(response => this.setState({
+            username: response.data.username,
+            id: response.data.id
+        }))
+    }
+
     state = {
         loginModalOpen: false
     }
