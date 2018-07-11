@@ -52,13 +52,13 @@ class NavBar extends Component {
                         <div className="navbar-flex-item">
                             <div className="navbar-button-group">
                                 <NavLink>
-                                    <img src="/assets/images/upvote.png" alt="upvote" />
+                                    <img src="/assets/images/like.png" alt="upvote" />
                                 </NavLink>
                                 <NavbarBrand className="navbar-brand" href="/">
                                     <Button className="leap-button">LEAP</Button>
                                 </NavbarBrand>
                                 <NavLink >
-                                    <img src="/assets/images/downvote.png" alt="downvote" />
+                                    <img src="/assets/images/dislike.png" alt="downvote" />
                                 </NavLink>
                             </div>
                         </div>

@@ -23,15 +23,13 @@
 .navbar-flex-item .navbar-button-group{
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
+    justify-content: space-around;
 }
-.navbar-flex-item--end{
-    align-self: flex-end;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-}
+/* .navbar-flex-item--end{
+    /* display: flex;
+    justify-content: space-between;
+    height: 100%; */
+
 .navbar-button-group{
     transform: translate(-50%, -50%);
     left: 50%;
@@ -39,13 +37,19 @@
     position: absolute;
 }
 
+
 .navbar-brand .leap-button{
+    display: inline-block;
     border-radius: 50px;
     border: none;
     font-size: 24px;
     padding: 5px 50px;
-    margin: 0 20px;
+    margin: 10px 20px;
     background: linear-gradient(to right, #ff3366, #f98bd9);
+}
+
+.navbar-collapse ul li {
+    margin-right: 15px;
 }
 /* end of NavBar */
 
