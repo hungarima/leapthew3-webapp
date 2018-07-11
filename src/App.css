@@ -60,11 +60,16 @@
 
 /* Iframe */
 .main-screen .frame{
-    padding: 0 30px;
+    background: white;
+    margin: 20px auto;
+    width: 95%;
+    height: 100%;
+    box-shadow:0px 10px 50px 5px rgba(0,0,0,0.7);
+    border-radius: 10px;
+    overflow: hidden;
+    border: none;
 }
 .main-screen iframe{
-    margin: 20px 0px;
-    box-shadow:0px 10px 50px 5px rgba(0,0,0,0.7);
 }
 /* end Iframe */
 /* Main SCREEN */

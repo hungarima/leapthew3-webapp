@@ -15,9 +15,15 @@ import {
 import ProfilePanel from '../components/ProfilePanel';
 
 class NavBar extends Component {
+    
+    componentWillMount = () => {
+        axios.get("/api/auth").then(response => this.setState({
+            username: response.data.username,
+            id: response.data.id
+        }))
+    }
+
     state = {
-        username: "",
-        password: "",
         loginModalOpen: false
     }
 
@@ -35,7 +41,6 @@ class NavBar extends Component {
                 this._toggleLoginModal();
             })
             .catch(err => {
-                console.error(err.response.data.errMsg);
                 this.setState({ errorMessage: err.response.data.errMsg });
             });
     }
