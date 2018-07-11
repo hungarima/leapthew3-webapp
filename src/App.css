@@ -37,6 +37,9 @@
     position: absolute;
 }
 
+.navbar-button-group .nav-link:last-child {
+    margin-left: -16px; 
+}
 
 .navbar-brand .leap-button{
     display: inline-block;
