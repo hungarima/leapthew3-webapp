@@ -11,36 +11,62 @@ class MainScreen extends Component {
 
   componentDidMount() {
     // before render the 1st time
-    axios
-      .get("/api/url")
-      .then(data => {
-        // shuffle the list
-        this.setState({
-          urlList: _.shuffle(data.data),
-        });
-        // set currentUrl
-        if(this.state.urlList.length > 0 ){
-          this.setState({
-            currentUrl: this.state.urlList[0].url,
-            currentId: this.state.urlList[0]._id
-          });
-        }
-      })
-      .catch(err => console.log(err))
+    // axios
+    //   .get("/api/url")
+    //   .then(data => {
+    //     // shuffle the list
+    //     this.setState({
+    //       urlList: _.shuffle(data.data),
+    //     });
+    //     // set currentUrl
+    //     if (this.state.urlList.length > 0) {
+    //       this.setState({
+
+    //       });
+    //     }
+    //   })
+    //   .catch(err => console.log(err))
+
+    Promise.all([
+      axios.get('api/url'),
+      axios.get('/api/url/currentUrlId')
+    ]).then( (results) => {
+      // results = array of all response results
+      let urlList = _.shuffle(results[0].data);
+      // currentUrl
+      const currentUrlId = results[1].data ? results[1].data : urlList[0]._id;
+      
+      this.setState({
+        urlList: urlList,
+        currentUrlId: currentUrlId,
+        currentUrlIndex : this.getIndexById(urlList, currentUrlId)
+      });
+      
+      
+      
+    }).catch(err => console.log(err));
+    
+
   }
 
   displayFrameContent = () => {
-    return this.state.currentUrl ? <FrameContent url={this.state.currentUrl} /> : '';
+    return this.state.currentUrlId ? <FrameContent currentUrlId={this.state.currentUrlId} /> : '';
   }
 
   render() {
-    
+
     return (
       <div className="main-screen">
         <NavBar />
         {this.displayFrameContent()}
       </div>
     );
+  }
+
+  getIndexById(array, id) {
+    if(id) {
+      return _.findIndex(array, ['_id', id]);
+    } else return 0;
   }
 
   _getUrlFromList(index, urlList) {
@@ -52,6 +78,7 @@ class MainScreen extends Component {
       return urlList[index];
     }
   }
+
 }
 
 export default MainScreen;

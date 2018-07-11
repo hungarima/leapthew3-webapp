@@ -4,9 +4,9 @@ import axios from '../axios';
 class FrameContent extends Component {
     state={iframeSrc: ''}
     componentDidMount() {
-        if(this.props.url) {
+        if(this.props.currentUrlId) {
             axios
-                .get(this.props.url)
+                .get(`api/url/${this.props.currentUrlId}/data`)
                 .then(response => {
                     this.setState({iframeSrc: response.data.url});
                 })
