@@ -57,7 +57,7 @@ class MainScreen extends Component {
 
     return (
       <div className="main-screen">
-        <NavBar />
+        <NavBar onLeap={this._onLeap} />
         {this.displayFrameContent()}
       </div>
     );
@@ -69,15 +69,39 @@ class MainScreen extends Component {
     } else return 0;
   }
 
-  _getUrlFromList(index, urlList) {
-    let length = urlList.length;
-    if (index > length) {
-      // if index is bigger than size of list, return last index of list
-      return urlList[length - 1];
+  _onLeap = () => {
+    // change currenUrlId and currentUrlIndex
+    let length = this.state.urlList.length - 1;
+    if(this.state.currentUrlIndex >= length) {
+      // if index is bigger than size of list, shuffle the urlList
+      // and redirect to first index of urlList
+      let urlList = _.shuffle(this.state.urlList);
+      this.setState({
+        urlList: urlList,
+        currentUrlIndex: 0,
+        currentUrlId: urlList[0]._id
+      });
+      
+
     } else {
-      return urlList[index];
+      let index = this.state.currentUrlIndex + 1 ;
+      this.setState({ 
+        currentUrlIndex: index,
+        currentUrlId: this.state.urlList[index]._id
+      });
+      
     }
   }
+
+  // _getUrlFromList(index, urlList) {
+  //   let length = urlList.length;
+  //   if (index > length) {
+  //     // if index is bigger than size of list, return last index of list
+  //     return urlList[length - 1];
+  //   } else {
+  //     return urlList[index];
+  //   }
+  // }
 
 }
 

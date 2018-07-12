@@ -59,8 +59,8 @@ class NavBar extends Component {
                                 <NavLink>
                                     <img src="/assets/images/like.png" alt="upvote" />
                                 </NavLink>
-                                <NavbarBrand className="navbar-brand" href="/">
-                                    <Button className="leap-button">LEAP</Button>
+                                <NavbarBrand className="navbar-brand" >
+                                    <Button className="leap-button" onClick={this.props.onLeap.bind(this)}>LEAP</Button>
                                 </NavbarBrand>
                                 <NavLink >
                                     <img src="/assets/images/dislike.png" alt="downvote" />
