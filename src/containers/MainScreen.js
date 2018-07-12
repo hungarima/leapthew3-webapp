@@ -57,7 +57,7 @@ class MainScreen extends Component {
 
     return (
       <div className="main-screen">
-        <NavBar onLeap={this._onLeap} />
+        <NavBar currentUrlId={this.state.currentUrlId} onLeap={this._onLeap} />
         {this.displayFrameContent()}
       </div>
     );
