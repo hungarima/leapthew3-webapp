@@ -29,9 +29,17 @@ class NavBar extends Component {
     }
 
     
-    like = () => {
-
+    upvote = () => {
         axios.post(`/api/url/${this.props.currentUrlId}/upvote`)
+        .then(response => {
+            console.log(response);
+
+        })
+        .catch(error => console.log(error));
+    }
+
+    downvote = () => {
+        axios.delete(`/api/url/${this.props.currentUrlId}/downvote`)
         .then(response => {
             console.log(response);
 
@@ -79,13 +87,13 @@ class NavBar extends Component {
                         <div className="navbar-flex-item">
                             <div className="navbar-button-group">
                                 <NavLink>
-                                    <Button onClick={this.like} ><img src="/assets/images/like.png" alt="upvote" /></Button>
+                                    <Button onClick={this.upvote} ><img src="/assets/images/like.png" alt="upvote" /></Button>
                                 </NavLink>
                                 <NavbarBrand className="navbar-brand" >
                                     <Button className="leap-button" onClick={this.props.onLeap.bind(this)}>LEAP</Button>
                                 </NavbarBrand>
                                 <NavLink >
-                                    <Button onClick ={() => {console.log("dislike")}}><img src="/assets/images/dislike.png" alt="downvote" /></Button>
+                                    <Button onClick ={this.downvote}><img src="/assets/images/dislike.png" alt="downvote" /></Button>
                                 </NavLink>
                             </div>
                         </div>
