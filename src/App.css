@@ -2,6 +2,7 @@
 
 
 /* NavBar */
+
 .navbar-flex{
     justify-content: center;
     align-items: center;
@@ -35,6 +36,10 @@
     left: 50%;
     top: 50%;
     position: absolute;
+}
+.navbar-button-group button {
+    padding:0;
+
 }
 
 .navbar-button-group .nav-link:last-child {

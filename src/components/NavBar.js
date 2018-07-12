@@ -24,7 +24,19 @@ class NavBar extends Component {
     }
 
     state = {
-        loginModalOpen: false
+        loginModalOpen: false,
+        vote: null
+    }
+
+    
+    like = () => {
+
+        axios.post(`/api/url/${req.params.urlId}`)
+        .then(response => {
+            console.log(response);
+
+        })
+        .catch(error => console.log(error));
     }
 
     _onLogin = (submittedUsername, submittedPassword) => {
@@ -57,13 +69,13 @@ class NavBar extends Component {
                         <div className="navbar-flex-item">
                             <div className="navbar-button-group">
                                 <NavLink>
-                                    <img src="/assets/images/like.png" alt="upvote" />
+                                    <Button onClick={this.like} ><img src="/assets/images/like.png" alt="upvote" /></Button>
                                 </NavLink>
                                 <NavbarBrand className="navbar-brand" href="/">
                                     <Button className="leap-button">LEAP</Button>
                                 </NavbarBrand>
                                 <NavLink >
-                                    <img src="/assets/images/dislike.png" alt="downvote" />
+                                    <Button onClick ={() => {console.log("dislike")}}><img src="/assets/images/dislike.png" alt="downvote" /></Button>
                                 </NavLink>
                             </div>
                         </div>
