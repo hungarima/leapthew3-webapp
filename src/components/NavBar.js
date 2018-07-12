@@ -15,7 +15,7 @@ import {
 import ProfilePanel from '../components/ProfilePanel';
 
 class NavBar extends Component {
-    
+
     componentWillMount = () => {
         axios.get("/api/auth").then(response => this.setState({
             username: response.data.username,
@@ -40,7 +40,7 @@ class NavBar extends Component {
     }
 
     _onLogin = (submittedUsername, submittedPassword) => {
-        axios 
+        axios
             .post("/api/auth", {
                 username: submittedUsername,
                 password: submittedPassword
@@ -57,6 +57,16 @@ class NavBar extends Component {
             });
     }
 
+    _onLogout = () => {
+        axios
+            .delete("/api/auth")
+            .then(response => {
+                console.log(response.data);
+                this.setState({username: '', id: ''})
+            } ) // handle headers
+            .catch(err => console.log(err));
+    }
+
     _toggleLoginModal = () => {
         this.setState({ loginModalOpen: !this.state.loginModalOpen })
     }
@@ -71,8 +81,8 @@ class NavBar extends Component {
                                 <NavLink>
                                     <Button onClick={this.like} ><img src="/assets/images/like.png" alt="upvote" /></Button>
                                 </NavLink>
-                                <NavbarBrand className="navbar-brand" href="/">
-                                    <Button className="leap-button">LEAP</Button>
+                                <NavbarBrand className="navbar-brand" >
+                                    <Button className="leap-button" onClick={this.props.onLeap.bind(this)}>LEAP</Button>
                                 </NavbarBrand>
                                 <NavLink >
                                     <Button onClick ={() => {console.log("dislike")}}><img src="/assets/images/dislike.png" alt="downvote" /></Button>
@@ -93,6 +103,7 @@ class NavBar extends Component {
                                     <ProfilePanel
                                         username={this.state.username}
                                         onLogin={this._onLogin}
+                                        onLogout={this._onLogout}
                                         isLoginModalOpen={this.state.loginModalOpen}
                                         toggleLoginModal={this._toggleLoginModal}
                                         errorMessage={this.state.errorMessage}
