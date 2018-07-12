@@ -12,6 +12,10 @@ import LoginModal from './LoginModal';
 class ProfilePanel extends Component {
     state = {}
 
+    handleSignoutClicked = (event) => {
+        this.props.onLogout();
+    }
+
     render() {
         const display = this.props.username
             ? (
@@ -23,7 +27,7 @@ class ProfilePanel extends Component {
                         <DropdownItem>
                             Profile
                         </DropdownItem>
-                        <DropdownItem>
+                        <DropdownItem onClick={this.handleSignoutClicked}>
                             {/* TODO: Signout  */}
                             Sign out
                         </DropdownItem>

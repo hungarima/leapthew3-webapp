@@ -15,7 +15,7 @@ import {
 import ProfilePanel from '../components/ProfilePanel';
 
 class NavBar extends Component {
-    
+
     componentWillMount = () => {
         axios.get("/api/auth").then(response => this.setState({
             username: response.data.username,
@@ -28,7 +28,7 @@ class NavBar extends Component {
     }
 
     _onLogin = (submittedUsername, submittedPassword) => {
-        axios 
+        axios
             .post("/api/auth", {
                 username: submittedUsername,
                 password: submittedPassword
@@ -43,6 +43,13 @@ class NavBar extends Component {
             .catch(err => {
                 this.setState({ errorMessage: err.response.data.errMsg });
             });
+    }
+
+    _onLogout = () => {
+        axios
+            .delete("/api/auth")
+            .then(response => console.log(response.data) ) // handle headers
+            .catch(err => console.log(err));
     }
 
     _toggleLoginModal = () => {
@@ -81,6 +88,7 @@ class NavBar extends Component {
                                     <ProfilePanel
                                         username={this.state.username}
                                         onLogin={this._onLogin}
+                                        onLogout={this._onLogout}
                                         isLoginModalOpen={this.state.loginModalOpen}
                                         toggleLoginModal={this._toggleLoginModal}
                                         errorMessage={this.state.errorMessage}
