@@ -29,15 +29,15 @@ class NavBar extends Component {
     }
 
     
-    like = () => {
+    // like = () => {
 
-        axios.post(`/api/url/${req.params.urlId}`)
-        .then(response => {
-            console.log(response);
+    //     axios.post(`/api/url/${req.params.urlId}`)
+    //     .then(response => {
+    //         console.log(response);
 
-        })
-        .catch(error => console.log(error));
-    }
+    //     })
+    //     .catch(error => console.log(error));
+    // }
 
     _onLogin = (submittedUsername, submittedPassword) => {
         axios
