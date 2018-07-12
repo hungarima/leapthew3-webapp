@@ -48,7 +48,10 @@ class NavBar extends Component {
     _onLogout = () => {
         axios
             .delete("/api/auth")
-            .then(response => console.log(response.data) ) // handle headers
+            .then(response => {
+                console.log(response.data);
+                this.setState({username: '', id: ''})
+            } ) // handle headers
             .catch(err => console.log(err));
     }
 
