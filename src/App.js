@@ -5,6 +5,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import MainScreen from './containers/MainScreen';
+import ProfileScreen from './containers/ProfileScreen';
 
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
       <div className="App">
       <Switch>
         <Route path ="/" component={MainScreen} />
+        <Route path ="/api/users/:id" component={ProfileScreen} />
       </Switch>
       </div>
     );

@@ -5,9 +5,11 @@ import {
     DropdownMenu,
     DropdownItem,
     NavItem,
+    NavLink,
     Button
 } from 'reactstrap';
 import LoginModal from './LoginModal';
+import config from '../config';
 
 class ProfilePanel extends Component {
     state = {}
@@ -25,10 +27,9 @@ class ProfilePanel extends Component {
                     </DropdownToggle>
                     <DropdownMenu right>
                         <DropdownItem>
-                            Profile
+                            <NavLink href={`${config.rootPath}/api/users/5b40bdc870217628046ed32b`} >Profile</NavLink>
                         </DropdownItem>
                         <DropdownItem onClick={this.handleSignoutClicked}>
-                            {/* TODO: Signout  */}
                             Sign out
                         </DropdownItem>
                     </DropdownMenu>
