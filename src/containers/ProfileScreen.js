@@ -6,6 +6,7 @@ class ProfileScreen extends Component {
         return (
             <div className="profile-screen">
                 <NavBar />
+                Update to premium to unlock this feature
             </div>
         );
     }
