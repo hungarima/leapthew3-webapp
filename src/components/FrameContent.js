@@ -32,20 +32,18 @@ class FrameContent extends Component {
 
     render() {
         return (
-            <div className="">
-                <div className="frame" >
-                    <Iframe
-                        url={this.state.iframeSrc}
-                        width="100%"
-                        height="700px"
-                        display="initial"
-                        position="relative"
-                        frameborder="0"
-                        allowFullScreen
-                    >
-                    </Iframe>
-                </div>
-            </div >
+            <div className="frame" >
+                <Iframe
+                    url={this.state.iframeSrc}
+                    width="100%"
+                    height="600px"
+                    display="initial"
+                    position="relative"
+                    frameborder="0"
+                    allowFullScreen
+                >
+                </Iframe>
+            </div>
         );
     }
 }
