@@ -61,7 +61,8 @@ class NavBar extends Component {
                 this._toggleLoginModal();
             })
             .catch(err => {
-                this.setState({ errorMessage: err.response.data.errMsg });
+                console.log(err);
+                // this.setState({ errorMessage: err });
             });
     }
 
