@@ -4,20 +4,12 @@ import FrameContent from '../components/FrameContent';
 import axios from "../axios";
 import _ from 'lodash';
 
-import { Link } from 'react-router-dom';
-
 class MainScreen extends Component {
   state = {
     urlList: []
   }
 
   componentDidMount() {
-    
-    // window.addEventListener("hashchange", this.detectBackOrForward(
-    //   function () { console.log("back") },
-    //   function () { console.log("forward") }
-    // ));
-
     // before render the 1st time
     axios
       .get("/api/url")
@@ -31,12 +23,6 @@ class MainScreen extends Component {
           currentUrlId: localStorage.getItem('currentUrlId'),
           currentUrlIndex: this.getIndexById(urlList, currentUrlId)
         });
-        // set currentUrl
-        // if (this.state.urlList.length > 0) {
-        //   this.setState({
-
-        //   });
-        // }
       })
       .catch(err => console.log(err))
 
@@ -66,30 +52,9 @@ class MainScreen extends Component {
 
   }
 
-  // detectBackOrForward = function (onBack, onForward) {
-  //   let hashHistory = [window.location.hash];
-  //   let historyLength = window.history.length;
-    
-  //   return function () {
-  //     var hash = window.location.hash, length = window.history.length;
-  //     if (hashHistory.length && historyLength === length) {
-  //       if (hashHistory[hashHistory.length - 2] === hash) {
-  //         hashHistory = hashHistory.slice(0, -1);
-  //         onBack();
-  //       } else {
-  //         hashHistory.push(hash);
-  //         onForward();
-  //       }
-  //     } else {
-  //       hashHistory.push(hash);
-  //       historyLength = length;
-  //     }
-  //   }
-  // };
-
   displayFrameContent = () => {
     return this.state.currentUrlId
-      ? <Link to={`api/url/${this.state.currentUrlId}`} ><FrameContent currentUrlId={this.state.currentUrlId} /> </Link>
+      ? <FrameContent currentUrlId={this.state.currentUrlId} />
       : '';
   }
 
@@ -134,16 +99,6 @@ class MainScreen extends Component {
 
     }
   }
-
-  // _getUrlFromList(index, urlList) {
-  //   let length = urlList.length;
-  //   if (index > length) {
-  //     // if index is bigger than size of list, return last index of list
-  //     return urlList[length - 1];
-  //   } else {
-  //     return urlList[index];
-  //   }
-  // }
 
 }
 

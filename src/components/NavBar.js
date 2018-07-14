@@ -28,23 +28,23 @@ class NavBar extends Component {
         vote: null
     }
 
-    
+
     upvote = () => {
         axios.post(`/api/url/${this.props.currentUrlId}/upvote`)
-        .then(response => {
-            console.log(response);
+            .then(response => {
+                console.log(response);
 
-        })
-        .catch(error => console.log(error));
+            })
+            .catch(error => console.log(error));
     }
 
     downvote = () => {
         axios.delete(`/api/url/${this.props.currentUrlId}/downvote`)
-        .then(response => {
-            console.log(response);
+            .then(response => {
+                console.log(response);
 
-        })
-        .catch(error => console.log(error));
+            })
+            .catch(error => console.log(error));
     }
 
     _onLogin = (submittedUsername, submittedPassword) => {
@@ -71,8 +71,8 @@ class NavBar extends Component {
             .delete("/api/auth")
             .then(response => {
                 console.log(response.data);
-                this.setState({username: '', id: ''})
-            } ) // handle headers
+                this.setState({ username: '', id: '' })
+            }) // handle headers
             .catch(err => console.log(err));
     }
 
@@ -91,10 +91,12 @@ class NavBar extends Component {
                                     <Button id="upvote" onClick={this.upvote} ><img src="/assets/images/like.png" alt="upvote" /></Button>
                                 </NavLink>
                                 <NavbarBrand className="navbar-brand" >
-                                    <Button className="leap-button" onClick={this.props.onLeap.bind(this)}>LEAP</Button>
+                                    
+                                        <Button className="leap-button" onClick={this.props.onLeap.bind(this)}>LEAP</Button>
+                                    
                                 </NavbarBrand>
                                 <NavLink >
-                                    <Button id="downvote" onClick ={this.downvote}><img src="/assets/images/dislike.png" alt="downvote" /></Button>
+                                    <Button id="downvote" onClick={this.downvote}><img src="/assets/images/dislike.png" alt="downvote" /></Button>
                                 </NavLink>
                             </div>
                         </div>
