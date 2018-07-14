@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Iframe from 'react-iframe';
 import axios from '../axios';
 class FrameContent extends Component {
-    state = { 
+    state = {
         iframeSrc: '',
     }
 
@@ -40,25 +40,26 @@ class FrameContent extends Component {
     }
 
     renderIframe() {
-        // return <Iframe
-        //     url={this.state.iframeSrc}
-        //     width="100%"
-        //     height="600px"
-        //     display="initial"
-        //     position="relative"
-        //     frameborder="0"
-        //     allowFullScreen
-        //     onbeforeunload={() => { console.log("123") }}
-        // >
-        // </Iframe>;
 
         return (
-        <div> 
-            <object id="frame" onLoad={() => {console.log("load")}} data={this.state.iframeSrc} width="100%" height="600" type="text/html"> </object>
-            <div id="loadingMessage">Loading...</div>
-        </div>
-        
-    )
+            <div>
+                <object id="frame" onLoad={() => { console.log("load") }} data={this.state.iframeSrc} width="100%" height="600" type="text/html"> </object>
+                <div id="loadingMessage">Loading...</div>
+            </div>
+            
+            // return <Iframe
+            //     url={this.state.iframeSrc}
+            //     width="100%"
+            //     height="600px"
+            //     display="initial"
+            //     position="relative"
+            //     frameborder="0"
+            //     allowFullScreen
+            //     onbeforeunload={() => { console.log("123") }}
+            // >
+            // </Iframe>;
+
+        )
     }
 
     render() {
