@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import Iframe from 'react-iframe';
 import axios from '../axios';
 class FrameContent extends Component {
-    state = { iframeSrc: '' }
+    state = { 
+        iframeSrc: '',
+    }
 
     componentDidMount() {
         // will get called before first time render
@@ -30,6 +32,7 @@ class FrameContent extends Component {
             })
     }
 
+
     render() {
         return (
             <div className="frame" >
@@ -37,14 +40,13 @@ class FrameContent extends Component {
                     url={this.state.iframeSrc}
                     width="100%"
                     height="600px"
-                    display="initial"
                     position="relative"
                     frameborder="0"
                     allowFullScreen
+                    onLoad= {this.onLoad}
                 >
                 </Iframe>
-            </div>
-        );
+            </div>)
     }
 }
 

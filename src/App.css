@@ -92,6 +92,8 @@ button#upvote:hover, button#downvote:hover{
 }
 /* end Iframe */
 /* Main SCREEN */
-
+iframe {
+    background: url("/assets/loading.gif") center center no-repeat;   
+}
 
 
