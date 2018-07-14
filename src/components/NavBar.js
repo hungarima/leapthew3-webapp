@@ -56,7 +56,7 @@ class NavBar extends Component {
             })
             .then(response => {
                 this.setState({ successMessage: "Registered!"});
-                this._toggleLoginModal();
+                // this._toggleLoginModal();
 
             })
             .catch(err => console.log(err));

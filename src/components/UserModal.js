@@ -33,6 +33,16 @@ class UserModal extends Component {
         }
     }
 
+    renderRegister() {
+        if (this.props.successMessage) {
+            return <h1 style={{
+                color: "red"
+            }}>{this.props.successMessage}</h1>
+        } else {
+            return <Register onRegister={this.props.onRegister}/>
+        }
+    }
+
     render() {
         return (
             <Modal
@@ -80,16 +90,10 @@ class UserModal extends Component {
                     </TabPane>
                     <TabPane tabId="2">
                         <ModalHeader toggle={this.props.toggleLoginModal}>
-                                Register
+                            Register
                         </ModalHeader>
                         <ModalBody>
-                        <h6
-                                style={{
-                                color: "red"
-                            }}>{this.props.successMessage
-                                    ? this.props.successMessage
-                                    : ''}</h6>
-                            <Register onRegister = {this.props.onRegister}/>
+                            {this.renderRegister()}
                         </ModalBody>
                     </TabPane>
 
@@ -98,7 +102,6 @@ class UserModal extends Component {
             </Modal>
         );
     }
-
 
 }
 

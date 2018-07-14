@@ -46,7 +46,7 @@ class FrameContent extends Component {
                 <object id="frame" onLoad={() => { console.log("load") }} data={this.state.iframeSrc} width="100%" height="600" type="text/html"> </object>
                 <div id="loadingMessage">Loading...</div>
             </div>
-            
+
             // return <Iframe
             //     url={this.state.iframeSrc}
             //     width="100%"
