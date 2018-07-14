@@ -7,7 +7,6 @@ class Register extends Component {
         username: "",
         email: "",
         password: "",
-        confirmPassword: ""
     };
 
     _register = () => {
@@ -34,7 +33,7 @@ class Register extends Component {
                         id="registerEmail"
                         type="email"
                         name="email"
-                        onChange={(event) => this.setState({password: event.target.value})}/>
+                        onChange={(event) => this.setState({email: event.target.value})}/>
                 </FormGroup>
                 <FormGroup>
                     <Label for="registerPassword">Password</Label>
