@@ -19,17 +19,17 @@ class Login extends Component {
         return (
             <Form>
                 <FormGroup>
-                    <Label for="inputUsername">Username</Label>
+                    <Label for="loginUsername">Username</Label>
                     <Input
-                        id="inputUsername"
+                        id="loginUsername"
                         type="text"
                         name="username"
                         onChange={(event) => this.setState({username: event.target.value})}/>
                 </FormGroup>
                 <FormGroup>
-                    <Label for="inputPassword">Password</Label>
+                    <Label for="loginPassword">Password</Label>
                     <Input
-                        id="inputPassword"
+                        id="loginPassword"
                         type="password"
                         name="password"
                         onChange={(event) => this.setState({password: event.target.value})}/>
