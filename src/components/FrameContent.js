@@ -12,6 +12,7 @@ class FrameContent extends Component {
             axios
                 .get(`api/url/${this.props.currentUrlId}/data`)
                 .then(response => {
+                    localStorage.setItem("currentUrlId", this.props.currentUrlId );
                     this.setState({ iframeSrc: response.data.url });
                 })
                 .catch(err => {
@@ -21,10 +22,12 @@ class FrameContent extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
+        console.log(nextProps.currentUrlId);
         // will get called before every time this component re-render
         axios
             .get(`api/url/${nextProps.currentUrlId}/data`)
             .then(response => {
+                localStorage.setItem("currentUrlId",this.props.currentUrlId );
                 this.setState({ iframeSrc: response.data.url });
             })
             .catch(err => {
