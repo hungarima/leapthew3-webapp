@@ -11,6 +11,7 @@ class MainScreen extends Component {
     urlList: [],
   }
 
+
   componentDidMount() {
     
     // window.addEventListener("hashchange", this.detectBackOrForward(
@@ -111,7 +112,6 @@ class MainScreen extends Component {
   }
 
   _onLeap = () => {
-    this.setState({loaded: false})
     // change currenUrlId and currentUrlIndex
     let length = this.state.urlList.length - 1;
     if (this.state.currentUrlIndex >= length) {

@@ -8,8 +8,9 @@ import {
     NavLink,
     Button
 } from 'reactstrap';
-import LoginModal from './LoginModal';
+import UserModal from './UserModal';
 import config from '../config';
+
 
 class ProfilePanel extends Component {
     state = {}
@@ -44,11 +45,12 @@ class ProfilePanel extends Component {
 
         return (
             <div>
-                <LoginModal
+                <UserModal
                     onLogin={this.props.onLogin}
                     isLoginModalOpen = {this.props.isLoginModalOpen}
                     toggleLoginModal={this.props.toggleLoginModal}
                     errorMessage={this.props.errorMessage}
+                    successMessage={this.props.successMessage}
                 />
                 {display}
             </div>

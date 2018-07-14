@@ -35,11 +35,13 @@ class FrameContent extends Component {
             })
     }
 
+   
+
 
     render() {
         return (
             <div className="frame" >
-                <Iframe
+                {/* <Iframe
                     url={this.state.iframeSrc}
                     width="100%"
                     height="600px"
@@ -48,7 +50,7 @@ class FrameContent extends Component {
                     allowFullScreen
                     onLoad= {this.onLoad}
                 >
-                </Iframe>
+                </Iframe> */}
             </div>)
     }
 }
