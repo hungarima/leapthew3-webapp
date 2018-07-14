@@ -88,13 +88,13 @@ class NavBar extends Component {
                         <div className="navbar-flex-item">
                             <div className="navbar-button-group">
                                 <NavLink>
-                                    <Button onClick={this.upvote} ><img src="/assets/images/like.png" alt="upvote" /></Button>
+                                    <Button id="upvote" onClick={this.upvote} ><img src="/assets/images/like.png" alt="upvote" /></Button>
                                 </NavLink>
                                 <NavbarBrand className="navbar-brand" >
                                     <Button className="leap-button" onClick={this.props.onLeap.bind(this)}>LEAP</Button>
                                 </NavbarBrand>
                                 <NavLink >
-                                    <Button onClick ={this.downvote}><img src="/assets/images/dislike.png" alt="downvote" /></Button>
+                                    <Button id="downvote" onClick ={this.downvote}><img src="/assets/images/dislike.png" alt="downvote" /></Button>
                                 </NavLink>
                             </div>
                         </div>
