@@ -6,8 +6,9 @@ import _ from 'lodash';
 
 class MainScreen extends Component {
   state = {
-    urlList: []
+    urlList: [],
   }
+
 
   componentDidMount() {
     // before render the 1st time
@@ -56,13 +57,14 @@ class MainScreen extends Component {
     return this.state.currentUrlId
       ? <FrameContent currentUrlId={this.state.currentUrlId} />
       : '';
+
   }
 
   render() {
 
     return (
       <div className="main-screen">
-        <NavBar currentUrlId={this.state.currentUrlId} onLeap={this._onLeap} />
+        <NavBar currentUrlId={this.state.currentUrlId} onLeap={this._onLeap}/>
         {this.displayFrameContent()}
       </div>
     );

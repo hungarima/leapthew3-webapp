@@ -47,6 +47,21 @@ class NavBar extends Component {
             .catch(error => console.log(error));
     }
 
+    _onRegister = (username, email, password) => {
+        axios
+            .post("/api/users", {
+                username: username,
+                email: email,
+                password: password,
+            })
+            .then(response => {
+                this.setState({ successMessage: "Registered!"});
+                this._toggleLoginModal();
+
+            })
+            .catch(err => console.log(err));
+    }
+
     _onLogin = (submittedUsername, submittedPassword) => {
         axios
             .post("/api/auth", {
@@ -114,10 +129,12 @@ class NavBar extends Component {
                                     <ProfilePanel
                                         username={this.state.username}
                                         onLogin={this._onLogin}
+                                        onRegister = {this._onRegister}
                                         onLogout={this._onLogout}
                                         isLoginModalOpen={this.state.loginModalOpen}
                                         toggleLoginModal={this._toggleLoginModal}
                                         errorMessage={this.state.errorMessage}
+                                        successMessage= {this.state.successMessage}
                                     />
                                 </Nav>
                             </Collapse>

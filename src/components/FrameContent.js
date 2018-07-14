@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import Iframe from 'react-iframe';
 import axios from '../axios';
 class FrameContent extends Component {
-    state = { iframeSrc: '' }
+    state = { 
+        iframeSrc: '',
+    }
 
     componentDidMount() {
         const iframe = document.getElementById("frame");
