@@ -89,7 +89,7 @@ class UserModal extends Component {
                             }}>{this.props.successMessage
                                     ? this.props.successMessage
                                     : ''}</h6>
-                            <Register/>
+                            <Register onRegister = {this.props.onRegister}/>
                         </ModalBody>
                     </TabPane>
 

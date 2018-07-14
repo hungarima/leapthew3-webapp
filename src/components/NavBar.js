@@ -55,7 +55,9 @@ class NavBar extends Component {
                 password: password,
             })
             .then(response => {
-                this.setState({ successMessage: "Registered!"})
+                this.setState({ successMessage: "Registered!"});
+                this._toggleLoginModal();
+
             })
             .catch(err => console.log(err));
     }
@@ -125,6 +127,7 @@ class NavBar extends Component {
                                     <ProfilePanel
                                         username={this.state.username}
                                         onLogin={this._onLogin}
+                                        onRegister = {this._onRegister}
                                         onLogout={this._onLogout}
                                         isLoginModalOpen={this.state.loginModalOpen}
                                         toggleLoginModal={this._toggleLoginModal}

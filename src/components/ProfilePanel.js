@@ -47,6 +47,7 @@ class ProfilePanel extends Component {
             <div>
                 <UserModal
                     onLogin={this.props.onLogin}
+                    onRegister={this.props.onRegister}
                     isLoginModalOpen = {this.props.isLoginModalOpen}
                     toggleLoginModal={this.props.toggleLoginModal}
                     errorMessage={this.props.errorMessage}

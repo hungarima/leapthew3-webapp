@@ -21,25 +21,25 @@ class Register extends Component {
         return (
             <Form>
                 <FormGroup>
-                    <Label for="inputUsername">Username</Label>
+                    <Label for="registerUsername">Username</Label>
                     <Input
-                        id="inputUsername"
+                        id="registerUsername"
                         type="text"
                         name="username"
                         onChange={(event) => this.setState({username: event.target.value})}/>
                 </FormGroup>
-                <FormGroup controlId="email">
-                    <Label for="inputEmail">Email</Label>
+                <FormGroup>
+                    <Label for="registerEmail">Email</Label>
                     <Input
-                        id="inputEmail"
+                        id="registerEmail"
                         type="email"
                         name="email"
                         onChange={(event) => this.setState({password: event.target.value})}/>
                 </FormGroup>
                 <FormGroup>
-                    <Label for="inputPassword">Password</Label>
+                    <Label for="registerPassword">Password</Label>
                     <Input
-                        id="inputPassword"
+                        id="registerPassword"
                         type="password"
                         name="password"
                         onChange={(event) => this.setState({password: event.target.value})}/>
