@@ -14,8 +14,8 @@ class App extends Component {
     return (
       <div className="App">
       <Switch>
+        <Route path ="/profile" component={ProfileScreen} />
         <Route path ="/" component={MainScreen} />
-        <Route path ="/api/users/:id" component={ProfileScreen} />
       </Switch>
       </div>
     );

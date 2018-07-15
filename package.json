@@ -12,6 +12,7 @@
     "react-iframe": "^1.2.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
+    "react-share": "^2.2.0",
     "reactstrap": "^6.2.0",
     "yarn": "^1.7.0",
     "yarn.lock": "^0.0.1-security"

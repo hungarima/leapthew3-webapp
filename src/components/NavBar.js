@@ -13,6 +13,7 @@ import {
 } from 'reactstrap';
 
 import ProfilePanel from '../components/ProfilePanel';
+import Share from './Share';
 
 class NavBar extends Component {
 
@@ -121,7 +122,9 @@ class NavBar extends Component {
                             <Collapse isOpen={false} navbar>
                                 <Nav className="ml-auto" navbar >
                                     <NavItem>
-                                        <NavLink href="/">SHARE</NavLink>
+                                        <NavLink href="#">
+                                            <Share />
+                                        </NavLink>
                                     </NavItem>
                                     <NavItem>
                                         <NavLink href="/">SAVE FOR LATER</NavLink>

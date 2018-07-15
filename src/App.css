@@ -96,4 +96,10 @@ iframe {
     background: url("/assets/loading.gif") center center no-repeat;   
 }
 
+.dropdown-item {
+    display: inline !important;
+    width: auto !important;
+    padding: 0 0.5em !important; 
+}
+
 
