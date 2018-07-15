@@ -79,7 +79,7 @@ button#upvote:hover, button#downvote:hover{
 
 /* Iframe */
 .main-screen .frame{
-    background: white;
+    background: black;
     margin: 20px auto;
     width: 95%;
     box-shadow:0px 10px 50px 5px rgba(0,0,0,0.7);
@@ -92,7 +92,7 @@ button#upvote:hover, button#downvote:hover{
 }
 /* end Iframe */
 /* Main SCREEN */
-/* iframe {
+iframe {
     background: url("/assets/loading.gif") center center no-repeat;   
-} */
+}
 
