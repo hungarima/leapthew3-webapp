@@ -5,9 +5,7 @@ import axios from "../axios";
 import _ from 'lodash';
 
 class MainScreen extends Component {
-  state = {
-    urlList: [],
-  }
+  
 
 
   componentDidMount() {
@@ -60,6 +58,11 @@ class MainScreen extends Component {
 
   }
 
+  state = {
+    urlList: [],
+    iframeSrc: null,
+  }
+
   render() {
 
     return (
@@ -77,6 +80,8 @@ class MainScreen extends Component {
   }
 
   _onLeap = () => {
+    this.setState.iframeSrc=null
+    
     // change currenUrlId and currentUrlIndex
     let length = this.state.urlList.length - 1;
     if (this.state.currentUrlIndex >= length) {
