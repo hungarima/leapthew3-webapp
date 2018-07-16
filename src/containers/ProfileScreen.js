@@ -6,7 +6,7 @@ class ProfileScreen extends Component {
     render() {
         return (
             <div className="profile-screen">
-                {/* <NavBar /> */}
+                <NavBar />
                <Share />
             </div>
         );

@@ -5,50 +5,15 @@ import axios from "../axios";
 import _ from 'lodash';
 
 class MainScreen extends Component {
-  
 
+  state = {
+    urlList: [],
+    iframeSrc: null,
+  }
 
   componentDidMount() {
     // before render the 1st time
-    axios
-      .get("/api/url")
-      .then(data => {
-        // shuffle the list
-        let urlList = _.shuffle(data.data);
-        const currentUrlId = localStorage.currentUrlId ? localStorage.currentUrlId : urlList[0]._id;
-        localStorage.setItem("currentUrlId", currentUrlId);
-        this.setState({
-          urlList: urlList,
-          currentUrlId: localStorage.getItem('currentUrlId'),
-          currentUrlIndex: this.getIndexById(urlList, currentUrlId)
-        });
-      })
-      .catch(err => console.log(err))
-
-    // Promise.all([
-    //   axios.get('api/url'),
-    //   axios.get('/api/url/currentUrlId')
-    // ]).then((results) => {
-    //   // results = array of all response results
-    //   let urlList = _.shuffle(results[0].data);
-    //   // currentUrl to localStorage
-    //   const currentUrlId = results[1].data ? results[1].data : urlList[0]._id;
-    //   localStorage.setItem("currentUrlId", currentUrlId);
-
-    //   this.setState({
-    //     urlList: urlList,
-    //     currentUrlId: localStorage.getItem('currentUrlId'),
-    //     currentUrlIndex: this.getIndexById(urlList, currentUrlId)
-    //   });
-    // }).catch(err => console.log(err));
-
-    // if (typeof (Storage) !== "undefined") {
-    //   // Code for localStorage/sessionStorage.
-    //   console.log("LS Here");
-    // } else {
-    //  console.log("LS undefined");
-    // }   // Sorry! No Web Storage support..
-
+    this._getUrlList(localStorage.urlListNum || 1);
   }
 
   displayFrameContent = () => {
@@ -58,16 +23,11 @@ class MainScreen extends Component {
 
   }
 
-  state = {
-    urlList: [],
-    iframeSrc: null,
-  }
-
   render() {
 
     return (
       <div className="main-screen">
-        <NavBar currentUrlId={this.state.currentUrlId} onLeap={this._onLeap}/>
+        <NavBar currentUrlId={this.state.currentUrlId} onLeap={this._onLeap} />
         {this.displayFrameContent()}
       </div>
     );
@@ -80,22 +40,12 @@ class MainScreen extends Component {
   }
 
   _onLeap = () => {
-    this.setState.iframeSrc=null
-    
-    // change currenUrlId and currentUrlIndex
+    this.setState.iframeSrc = null
+
     let length = this.state.urlList.length - 1;
     if (this.state.currentUrlIndex >= length) {
-      // if index is bigger than size of list, shuffle the urlList
-      // and redirect to first index of urlList
-      let urlList = _.shuffle(this.state.urlList);
-      localStorage.currentUrlId = urlList[0]._id;
-      this.setState({
-        urlList: urlList,
-        currentUrlIndex: 0,
-        currentUrlId: localStorage.getItem("currentUrlId")
-      });
-
-
+      // if index is bigger than size of list, call the next UrlList
+      this._getUrlList(parseInt(this.state.urlListNum, 10) + 1);
     } else {
       let index = this.state.currentUrlIndex + 1;
       localStorage.currentUrlId = this.state.urlList[index]._id;
@@ -105,6 +55,35 @@ class MainScreen extends Component {
       });
 
     }
+  }
+
+  _getUrlList = (urlListNum) => {
+    return axios
+      .get(`/api/url?page=${urlListNum}`)
+      .then(data => {
+
+        if (!data.data.url) {                 // end of urls
+          this._getUrlList(1);                // call the first page of urls
+          return;
+        } else {
+          
+          // shuffle the list
+          let urlList = _.shuffle(data.data.url);
+          let currentUrlIndex = this.getIndexById(urlList, localStorage.currentUrlId) !== -1 ? this.getIndexById(urlList, localStorage.currentUrlId) : 0;
+          let currentUrlId = urlList[currentUrlIndex]._id;
+
+          localStorage.setItem("currentUrlId", currentUrlId);
+          localStorage.setItem("urlListNum", data.data.thisPageNum);
+          this.setState({
+            urlList: urlList,
+            currentUrlId: localStorage.getItem('currentUrlId'),
+            urlListNum: localStorage.getItem('urlListNum'),
+            currentUrlIndex: currentUrlIndex
+          });
+        }
+
+      })
+      .catch(err => console.log(err))
   }
 
 }
