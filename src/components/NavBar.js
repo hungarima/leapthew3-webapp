@@ -26,8 +26,6 @@ class NavBar extends Component {
         
     }
 
-
-
     componentWillReceiveProps(nextProps) {
         this.setState({vote:null})
         // will get called before every time this component re-render

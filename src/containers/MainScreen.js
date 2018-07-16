@@ -40,7 +40,7 @@ class MainScreen extends Component {
   }
 
   _onLeap = () => {
-    this.setState.iframeSrc = null
+    this.setState.iframeSrc = null                      // <---- wut dis ??
 
     let length = this.state.urlList.length - 1;
     if (this.state.currentUrlIndex >= length) {
