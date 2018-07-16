@@ -35,15 +35,15 @@ class Share extends Component {
     render() {
         return (
             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-                <DropdownToggle caret>
-                    Share
+                <DropdownToggle color="link">
+                    <img src="/assets/images/share.png"/>
                 </DropdownToggle>
                 <DropdownMenu>
                     <DropdownItem>
                         <FacebookShareButton url={"https://leapthew3-webapp.herokuapp.com/"} quote={""} className="button">
                             <FacebookIcon size={32} round={true}/>
                         </FacebookShareButton>
-                        <FacebookShareCount url={""} className="count">
+                        <FacebookShareCount url={"https://leapthew3-webapp.herokuapp.com/"} className="count">
                             {count => count}
                         </FacebookShareCount>
                     </DropdownItem>

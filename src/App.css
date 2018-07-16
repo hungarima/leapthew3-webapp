@@ -2,6 +2,9 @@
     box-sizing: border-box;
 }
 
+
+
+
 /* NavBar */
 
 .navbar-flex {
@@ -57,11 +60,11 @@
 }
 
 .navbar-collapse ul li a {
-    
-    position: relative;
     margin-right: 15px;
 }
 
+
+/* 
 button#downvote,
 button#upvote {
     background: none;
@@ -69,8 +72,21 @@ button#upvote {
 }
 button#downvote:hover,
 button#upvote:hover {
-    /* border: 1px solid #cccccc; */
+    border: 1px solid #cccccc;
     box-shadow: 0 0 3px 3px rgba(0,0,0,0.7);
+} */
+
+.grow:hover {
+    transform: scale(1.1);
+}
+
+.grow {
+    transition: all .2s ease-in-out !important;
+}
+
+
+#vote {
+    color: white;
 }
 /* end of NavBar */
 
@@ -99,7 +115,7 @@ iframe {
     background: url("/assets/loading.gif") center center no-repeat;
 }
 
-.dropdown-item {
+#share .dropdown-item {
     display: inline !important;
     width: auto !important;
     padding: 0 0.5em !important;

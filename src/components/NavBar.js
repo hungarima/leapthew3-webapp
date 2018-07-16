@@ -49,6 +49,7 @@ class NavBar extends Component {
     upvote = () => {
         axios.post(`/api/url/${this.props.currentUrlId}/upvote`)
             .then(response => {
+                this.setState({ vote: this.state.vote + 1})
                 console.log(response);
 
             })
@@ -120,8 +121,8 @@ class NavBar extends Component {
                         <div className="navbar-flex-item">
                             <div className="navbar-button-group">
                                 <NavLink>
-                                    {this.state.vote}
-                                    <Button id="upvote" onClick={this.upvote} ><img src="/assets/images/like.png" alt="upvote" /></Button>
+                                    <b id="vote">{this.state.vote}</b>
+                                    <Button className="grow"  id="upvote" onClick={this.upvote} color="link"><img src="/assets/images/like.png" alt="upvote" /></Button>
                                 </NavLink>
                                 <NavbarBrand className="navbar-brand" >
                                     
@@ -129,7 +130,7 @@ class NavBar extends Component {
                                     
                                 </NavbarBrand>
                                 <NavLink >
-                                    <Button id="downvote" onClick={this.downvote}><img src="/assets/images/dislike.png" alt="downvote" /></Button>
+                                    <Button className="grow"  id="downvote" onClick={this.downvote} color="link"><img src="/assets/images/dislike.png" alt="downvote" /></Button>
                                 </NavLink>
                             </div>
                         </div>
@@ -139,12 +140,7 @@ class NavBar extends Component {
                             <Collapse isOpen={false} navbar>
                                 <Nav className="ml-auto" navbar >
                                     <NavItem>
-                                        <NavLink href="#">
-                                            <Share />
-                                        </NavLink>
-                                    </NavItem>
-                                    <NavItem>
-                                        <NavLink href="/">SAVE FOR LATER</NavLink>
+                                        <Button className="grow" id="share" color="link"><Share /></Button>
                                     </NavItem>
                                     <ProfilePanel
                                         username={this.state.username}

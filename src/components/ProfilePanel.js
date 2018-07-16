@@ -23,8 +23,8 @@ class ProfilePanel extends Component {
         const display = this.props.username
             ? (
                 <UncontrolledDropdown nav inNavbar>
-                    <DropdownToggle nav caret>
-                        {this.props.username}
+                    <DropdownToggle color="link">
+                        <img src="/assets/images/user.png"/>
                     </DropdownToggle>
                     <DropdownMenu right>
                         <DropdownItem>
