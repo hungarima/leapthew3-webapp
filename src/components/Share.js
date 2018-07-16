@@ -40,7 +40,7 @@ class Share extends Component {
                 </DropdownToggle>
                 <DropdownMenu>
                     <DropdownItem>
-                        <FacebookShareButton url={"https://www.google.com/"} quote={""} className="button">
+                        <FacebookShareButton url={"https://leapthew3-webapp.herokuapp.com/"} quote={""} className="button">
                             <FacebookIcon size={32} round={true}/>
                         </FacebookShareButton>
                         <FacebookShareCount url={""} className="count">

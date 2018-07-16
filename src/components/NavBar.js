@@ -22,6 +22,24 @@ class NavBar extends Component {
             username: response.data.username,
             id: response.data.id
         }))
+
+        
+    }
+
+
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({vote:null})
+        // will get called before every time this component re-render
+        axios
+            .get(`api/url/${nextProps.currentUrlId}/data`)
+            .then(response => {
+                this.setState({ vote: response.data.vote });
+                console.log(this.state.vote)
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }
 
     state = {
