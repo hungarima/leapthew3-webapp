@@ -7,7 +7,6 @@ class ProfileScreen extends Component {
         return (
             <div className="profile-screen">
                 <NavBar />
-               <Share />
             </div>
         );
     }
