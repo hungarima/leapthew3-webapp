@@ -69,6 +69,7 @@ class MainScreen extends Component {
           
           // shuffle the list
           let urlList = _.shuffle(data.data.url);
+          // try find the curURLIndex by curUrlID in the new urlList, if not found(-1) then change curUrlID = urlList[0]
           let currentUrlIndex = this.getIndexById(urlList, localStorage.currentUrlId) !== -1 ? this.getIndexById(urlList, localStorage.currentUrlId) : 0;
           let currentUrlId = urlList[currentUrlIndex]._id;
 
