@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import NavBar from '../components/NavBar';
-import Share from '../components/Share';
+import SimpleNavbar from '../components/SimpleNavBar';
 
 class ProfileScreen extends Component {
     render() {
         return (
-            <div className="profile-screen">
-                <NavBar />
+            <div className="main-screen">
+                <SimpleNavbar />
             </div>
         );
     }

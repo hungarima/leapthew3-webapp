@@ -88,12 +88,20 @@ button#upvote:hover {
 #vote {
     color: white;
 }
+
+.main-screen .navbar li.nav-item .profile-panel .nav-link{
+    line-height: 70px;
+}
 /* end of NavBar */
 
 /* Main SCREEN */
 .main-screen {
     background: #454545;
-    padding-bottom: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* Iframe */
@@ -106,9 +114,7 @@ button#upvote:hover {
     overflow: hidden;
     border: none;
 }
-.main-screen Iframe {
-    /* max-height: 100%; */
-}
+
 /* end Iframe */
 /* Main SCREEN */
 iframe {
@@ -120,3 +126,56 @@ iframe {
     width: auto !important;
     padding: 0 0.5em !important;
 }
+
+/* Profile SCREEN */
+
+/* end Profile SCREEN */
+
+/* SimpleNavbar */
+.main-screen nav.simple-navbar {
+    display: flex;
+    height: 100px;
+    background: black;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 50px;
+    overflow: hidden;
+}
+
+nav.simple-navbar .home-button{
+    display: inline-block;
+    border-radius: 50px;
+    border: none;
+    font-size: 24px;
+    padding: 5px 45px;
+    margin: 10px 20px;
+    background: linear-gradient(to right, #ff3366, #f98bd9);
+}
+
+.main-screen .profile-panel, nav.simple-navbar .profile-panel{
+    display: block;
+    height: 100%;
+    position: relative;
+}
+.profile-panel .nav-link{
+    display: block;
+    color: #6b6a6a;
+    text-decoration: none;
+    height: 100%;
+    line-height: 100px;
+    white-space: nowrap;
+    padding: 0 1rem;
+    border-top: 3px solid transparent;
+}
+.main-screen .profile-panel .nav-link:hover, nav.simple-navbar .profile-panel .nav-link:hover {
+    border-top: 3px solid #d85697;
+    color: #d85697;
+}
+
+.main-screen .profile-panel .nav-link:active, nav.simple-navbar .profile-panel .nav-link:active {
+    border-top: 3px solid #d85697;
+    color: #d85697;
+}
+
+/* end SimpleNavbar */

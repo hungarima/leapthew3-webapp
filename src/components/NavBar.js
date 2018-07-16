@@ -22,18 +22,16 @@ class NavBar extends Component {
             username: response.data.username,
             id: response.data.id
         }))
-
-        
     }
 
     componentWillReceiveProps(nextProps) {
-        this.setState({vote:null})
+        this.setState({ vote: null })
         // will get called before every time this component re-render
         axios
             .get(`api/url/${nextProps.currentUrlId}/data`)
             .then(response => {
                 this.setState({ vote: response.data.vote });
-    
+
             })
             .catch(err => {
                 console.log(err);
@@ -49,7 +47,7 @@ class NavBar extends Component {
     upvote = () => {
         axios.post(`/api/url/${this.props.currentUrlId}/upvote`)
             .then(response => {
-                this.setState({ vote: this.state.vote + 1})
+                this.setState({ vote: this.state.vote + 1 })
                 console.log(response);
 
             })
@@ -73,7 +71,7 @@ class NavBar extends Component {
                 password: password,
             })
             .then(response => {
-                this.setState({ successMessage: "Registered!"});
+                this.setState({ successMessage: "Registered!" });
                 // this._toggleLoginModal();
 
             })
@@ -122,15 +120,15 @@ class NavBar extends Component {
                             <div className="navbar-button-group">
                                 <NavLink>
                                     <b id="vote">{this.state.vote}</b>
-                                    <Button className="grow"  id="upvote" onClick={this.upvote} color="link"><img src="/assets/images/like.png" alt="upvote" /></Button>
+                                    <Button className="grow" id="upvote" onClick={this.upvote} color="link"><img src="/assets/images/like.png" alt="upvote" /></Button>
                                 </NavLink>
                                 <NavbarBrand className="navbar-brand" >
-                                    
-                                        <Button className="leap-button" onClick={this.props.onLeap.bind(this)}>LEAP</Button>
-                                    
+
+                                    <Button className="leap-button" onClick={this.props.onLeap.bind(this)}>LEAP</Button>
+
                                 </NavbarBrand>
                                 <NavLink >
-                                    <Button className="grow"  id="downvote" onClick={this.downvote} color="link"><img src="/assets/images/dislike.png" alt="downvote" /></Button>
+                                    <Button className="grow" id="downvote" onClick={this.downvote} color="link"><img src="/assets/images/dislike.png" alt="downvote" /></Button>
                                 </NavLink>
                             </div>
                         </div>
@@ -142,16 +140,18 @@ class NavBar extends Component {
                                     <NavItem>
                                         <Button className="grow" id="share" color="link"><Share /></Button>
                                     </NavItem>
-                                    <ProfilePanel
-                                        username={this.state.username}
-                                        onLogin={this._onLogin}
-                                        onRegister = {this._onRegister}
-                                        onLogout={this._onLogout}
-                                        isLoginModalOpen={this.state.loginModalOpen}
-                                        toggleLoginModal={this._toggleLoginModal}
-                                        errorMessage={this.state.errorMessage}
-                                        successMessage= {this.state.successMessage}
-                                    />
+                                    <NavItem>
+                                        <ProfilePanel
+                                            username={this.state.username}
+                                            onLogin={this._onLogin}
+                                            onRegister={this._onRegister}
+                                            onLogout={this._onLogout}
+                                            isLoginModalOpen={this.state.loginModalOpen}
+                                            toggleLoginModal={this._toggleLoginModal}
+                                            errorMessage={this.state.errorMessage}
+                                            successMessage={this.state.successMessage}
+                                        />
+                                    </NavItem>
                                 </Nav>
                             </Collapse>
                         </div>
