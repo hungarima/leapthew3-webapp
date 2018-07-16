@@ -33,7 +33,7 @@ class NavBar extends Component {
             .get(`api/url/${nextProps.currentUrlId}/data`)
             .then(response => {
                 this.setState({ vote: response.data.vote });
-                // console.log(this.state.vote)
+    
             })
             .catch(err => {
                 console.log(err);
@@ -120,6 +120,7 @@ class NavBar extends Component {
                         <div className="navbar-flex-item">
                             <div className="navbar-button-group">
                                 <NavLink>
+                                    {this.state.vote}
                                     <Button id="upvote" onClick={this.upvote} ><img src="/assets/images/like.png" alt="upvote" /></Button>
                                 </NavLink>
                                 <NavbarBrand className="navbar-brand" >

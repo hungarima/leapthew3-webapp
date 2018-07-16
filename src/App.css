@@ -1,12 +1,13 @@
-*{box-sizing: border-box;}
-
+* {
+    box-sizing: border-box;
+}
 
 /* NavBar */
 
-.navbar-flex{
+.navbar-flex {
     justify-content: center;
     align-items: center;
-    width: 100%;    
+    width: 100%;
     padding: 0 20px;
     height: 70px;
     display: -webkit-box;
@@ -17,11 +18,11 @@
     flex-flow: row wrap;
 }
 
-.navbar-flex-item{
+.navbar-flex-item {
     margin: auto;
 }
 
-.navbar-flex-item .navbar-button-group{
+.navbar-flex-item .navbar-button-group {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
@@ -31,22 +32,21 @@
     justify-content: space-between;
     height: 100%; */
 
-.navbar-button-group{
+.navbar-button-group {
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
     position: absolute;
 }
 .navbar-button-group button {
-    padding:0;
+    padding: 0;
 
 }
-
 .navbar-button-group .nav-link:last-child {
-    margin-left: -16px; 
+    margin-left: -16px;
 }
 
-.navbar-brand .leap-button{
+.navbar-brand .leap-button {
     display: inline-block;
     border-radius: 50px;
     border: none;
@@ -56,18 +56,21 @@
     background: linear-gradient(to right, #ff3366, #f98bd9);
 }
 
-.navbar-collapse ul li {
+.navbar-collapse ul li a {
+    
+    position: relative;
     margin-right: 15px;
 }
 
-button#upvote, button#downvote {
+button#downvote,
+button#upvote {
     background: none;
     border: none;
 }
-
-button#upvote:hover, button#downvote:hover{
+button#downvote:hover,
+button#upvote:hover {
     /* border: 1px solid #cccccc; */
-    box-shadow:0px 0px 3px 3px rgba(0,0,0,0.7);
+    box-shadow: 0 0 3px 3px rgba(0,0,0,0.7);
 }
 /* end of NavBar */
 
@@ -78,28 +81,26 @@ button#upvote:hover, button#downvote:hover{
 }
 
 /* Iframe */
-.main-screen .frame{
+.main-screen .frame {
     background: black;
     margin: 20px auto;
     width: 95%;
-    box-shadow:0px 10px 50px 5px rgba(0,0,0,0.7);
+    box-shadow: 0 10px 50px 5px rgba(0,0,0,0.7);
     border-radius: 10px;
     overflow: hidden;
     border: none;
 }
-.main-screen Iframe{
+.main-screen Iframe {
     /* max-height: 100%; */
 }
 /* end Iframe */
 /* Main SCREEN */
 iframe {
-    background: url("/assets/loading.gif") center center no-repeat;   
+    background: url("/assets/loading.gif") center center no-repeat;
 }
 
 .dropdown-item {
     display: inline !important;
     width: auto !important;
-    padding: 0 0.5em !important; 
+    padding: 0 0.5em !important;
 }
-
-
