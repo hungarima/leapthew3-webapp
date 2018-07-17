@@ -50,8 +50,8 @@ class SimpleNavbar extends Component {
                 this._toggleLoginModal();
             })
             .catch(err => {
-                console.log(err);
-                this.setState({ errorMessage: err });
+                console.log(err.errMsg);
+                this.setState({ errorMessage: err.errMsg });
             });
     }
 
