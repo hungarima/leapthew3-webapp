@@ -49,7 +49,6 @@ class NavBar extends Component {
             .then(response => {
                 this.setState({ vote: this.state.vote + 1 })
                 console.log(response);
-
             })
             .catch(error => console.log(error));
     }
@@ -58,6 +57,7 @@ class NavBar extends Component {
         axios.delete(`/api/url/${this.props.currentUrlId}/downvote`)
             .then(response => {
                 console.log(response);
+                this.setState({ vote: this.state.vote - 1 })
 
             })
             .catch(error => console.log(error));
