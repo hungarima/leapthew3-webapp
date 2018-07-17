@@ -37,7 +37,7 @@ class FrameContent extends Component {
 
 
     render() {
-        // if(!this.state.iframeSrc) return <div><img src="/assets/loading.gif" alt="loading"/></div>
+        if(!this.state.iframeSrc) return <div><img src="/assets/loading.gif" alt="loading"/></div>
         return (
             <div className="frame" >
                 <Iframe
