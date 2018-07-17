@@ -137,7 +137,7 @@ class NavBar extends Component {
                             <Collapse isOpen={false} navbar>
                                 <Nav className="ml-auto" navbar >
                                     <NavItem>
-                                        <Button className="grow" id="share" color="link"><Share /></Button>
+                                        <div className="grow" id="share" color="link"><Share /></div>
                                     </NavItem>
                                     <NavItem>
                                         <ProfilePanel
