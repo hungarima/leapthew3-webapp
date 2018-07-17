@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
     Modal,
     ModalHeader,
@@ -29,7 +29,7 @@ class UserModal extends Component {
 
     toggle(tab) {
         if (this.state.activeTab !== tab) {
-            this.setState({activeTab: tab});
+            this.setState({ activeTab: tab });
         }
     }
 
@@ -39,7 +39,7 @@ class UserModal extends Component {
                 color: "red"
             }}>{this.props.successMessage}</h1>
         } else {
-            return <Register onRegister={this.props.onRegister}/>
+            return <Register onRegister={this.props.onRegister} />
         }
     }
 
@@ -52,22 +52,22 @@ class UserModal extends Component {
                     <NavItem>
                         <NavLink
                             className={classnames({
-                            active: this.state.activeTab === '1'
-                        })}
+                                active: this.state.activeTab === '1'
+                            })}
                             onClick={() => {
-                            this.toggle('1');
-                        }}>
+                                this.toggle('1');
+                            }}>
                             Login
                         </NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink
                             className={classnames({
-                            active: this.state.activeTab === '2'
-                        })}
+                                active: this.state.activeTab === '2'
+                            })}
                             onClick={() => {
-                            this.toggle('2');
-                        }}>
+                                this.toggle('2');
+                            }}>
                             Register
                         </NavLink>
                     </NavItem>
@@ -79,13 +79,12 @@ class UserModal extends Component {
                             Login
                         </ModalHeader>
                         <ModalBody>
-                            <h6
-                                style={{
-                                color: "red"
-                            }}>{this.props.errorMessage
+                            <h6 style={{ color: "red" }}>
+                                {this.props.errorMessage
                                     ? this.props.errorMessage
-                                    : ''}</h6>
-                            <Login onLogin={this.props.onLogin}/>
+                                    : ''}
+                            </h6>
+                            <Login onLogin={this.props.onLogin} />
                         </ModalBody>
                     </TabPane>
                     <TabPane tabId="2">

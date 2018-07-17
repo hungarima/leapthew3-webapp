@@ -27,7 +27,7 @@ class ProfilePanel extends Component {
                     </DropdownToggle>
                     <DropdownMenu right>
                         <DropdownItem>
-                            <NavLink href={`${config.rootPath}/api/users/5b40bdc870217628046ed32b`} >Profile</NavLink>
+                            <NavLink href={`${config.rootPath}/5b40bdc870217628046ed32b/profile`} >Profile</NavLink>
                         </DropdownItem>
                         <DropdownItem onClick={this.handleSignoutClicked}>
                             Sign out

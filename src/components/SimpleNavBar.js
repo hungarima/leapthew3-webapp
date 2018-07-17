@@ -11,7 +11,8 @@ import ProfilePanel from './ProfilePanel';
 class SimpleNavbar extends Component {
 
     state = {
-        loginModalOpen: false
+        loginModalOpen: false,
+        errorMessage: ''
     }
 
     componentWillMount = () => {
@@ -49,9 +50,9 @@ class SimpleNavbar extends Component {
                 })
                 this._toggleLoginModal();
             })
-            .catch(err => {
-                console.log(err.errMsg);
-                this.setState({ errorMessage: err.errMsg });
+            .catch(error => {
+                console.log(error.response);
+                this.setState({ errorMessage: error.response.errMsg });
             });
     }
 
