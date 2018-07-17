@@ -36,7 +36,7 @@ class Share extends Component {
         return (
             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                 <DropdownToggle color="link">
-                    <img src="/assets/images/share.png"/>
+                    <img src="/assets/images/share.png" alt="share-to-social-networks"/>
                 </DropdownToggle>
                 <DropdownMenu>
                     <DropdownItem>

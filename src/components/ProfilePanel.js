@@ -5,10 +5,10 @@ import {
     DropdownMenu,
     DropdownItem,
     NavLink,
-    Button
+
 } from 'reactstrap';
 import UserModal from './UserModal';
-import config from '../config';
+
 
 
 class ProfilePanel extends Component {
@@ -23,11 +23,11 @@ class ProfilePanel extends Component {
             ? (
                 <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle color="link">
-                        <img src="/assets/images/user.png" />
+                        <img src="/assets/images/user.png" alt="user-options"/>
                     </DropdownToggle>
                     <DropdownMenu right>
                         <DropdownItem>
-                            <NavLink href={`${config.rootPath}/5b40bdc870217628046ed32b/profile`} >Profile</NavLink>
+                            <NavLink href={`/5b40bdc870217628046ed32b/profile`} >Profile</NavLink>
                         </DropdownItem>
                         <DropdownItem onClick={this.handleSignoutClicked}>
                             Sign out
