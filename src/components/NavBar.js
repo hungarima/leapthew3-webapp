@@ -134,13 +134,8 @@ class NavBar extends Component {
                             <NavbarToggler onClick={this.toggle} />
                             <Collapse isOpen={false} navbar>
                                 <Nav className="ml-auto" navbar >
-<<<<<<< HEAD
-                                    <NavItem > 
-                                        <Button className="grow" id="share" color="link"><Share /></Button>
-=======
                                     <NavItem>
                                         <div className="grow" id="share" color="link"><Share /></div>
->>>>>>> ec1a277b13b16b7282d6a6102568532773b94697
                                     </NavItem>
                                     <NavItem>
                                         <ProfilePanel
