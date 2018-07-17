@@ -59,6 +59,10 @@
     background: linear-gradient(to right, #ff3366, #f98bd9);
 }
 
+.navbar-brand .leap-button:hover {
+    background: linear-gradient(to right, #f98bd9, #ff3366);
+}
+
 .navbar-collapse ul li a {
     margin-right: 15px;
 }

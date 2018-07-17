@@ -58,7 +58,6 @@ class NavBar extends Component {
             .then(response => {
                 console.log(response);
                 this.setState({ vote: this.state.vote - 1 })
-
             })
             .catch(error => console.log(error));
     }
