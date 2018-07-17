@@ -123,9 +123,7 @@ class NavBar extends Component {
                                     <Button className="grow" id="upvote" onClick={this.upvote} color="link"><img src="/assets/images/like.png" alt="upvote" /></Button>
                                 </NavLink>
                                 <NavbarBrand className="navbar-brand" >
-
                                     <Button className="leap-button" onClick={this.props.onLeap.bind(this)}>LEAP</Button>
-
                                 </NavbarBrand>
                                 <NavLink >
                                     <Button className="grow" id="downvote" onClick={this.downvote} color="link"><img src="/assets/images/dislike.png" alt="downvote" /></Button>
@@ -137,7 +135,7 @@ class NavBar extends Component {
                             <NavbarToggler onClick={this.toggle} />
                             <Collapse isOpen={false} navbar>
                                 <Nav className="ml-auto" navbar >
-                                    <NavItem>
+                                    <NavItem > 
                                         <Button className="grow" id="share" color="link"><Share /></Button>
                                     </NavItem>
                                     <NavItem>

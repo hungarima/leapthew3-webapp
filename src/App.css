@@ -92,6 +92,10 @@ button#upvote:hover {
 .main-screen .navbar li.nav-item .profile-panel .nav-item > .nav-link{
     line-height: 70px;
 }
+
+.main-screen .navbar-flex .navbar-flex-item--end{
+    z-index: 1000;
+}
 /* end of NavBar */
 
 /* Main SCREEN */
@@ -128,7 +132,22 @@ iframe {
 }
 
 /* Profile SCREEN */
+.main-screen .row .col-4, .main-screen .row .col-8 {
+    border: 1px solid black;
+    
+}
 
+.profile-tab{
+    margin: 0 ;
+    padding: 20px 10px;
+    background: #000000;
+    
+}
+
+.profile-screen-content{ 
+    padding-top: 20px;
+    padding-bottom: 20px;
+ }
 /* end Profile SCREEN */
 
 /* SimpleNavbar */

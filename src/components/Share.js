@@ -39,7 +39,7 @@ class Share extends Component {
                     <img src="/assets/images/share.png" alt="share-to-social-networks"/>
                 </DropdownToggle>
                 <DropdownMenu>
-                    <DropdownItem>
+                    <DropdownItem key="1">
                         <FacebookShareButton url={"https://leapthew3-webapp.herokuapp.com/"} quote={""} className="button">
                             <FacebookIcon size={32} round={true}/>
                         </FacebookShareButton>
@@ -47,12 +47,12 @@ class Share extends Component {
                             {count => count}
                         </FacebookShareCount>
                     </DropdownItem>
-                    <DropdownItem>
+                    <DropdownItem key="2">
                         <TwitterShareButton url={""} title={""} className="button">
                             <TwitterIcon size={32} round={true}/>
                         </TwitterShareButton>
                     </DropdownItem>
-                    <DropdownItem>
+                    <DropdownItem key="3">
                         <GooglePlusShareButton url={""} className="button">
                             <GooglePlusIcon size={32} round={true}/>
                         </GooglePlusShareButton>
