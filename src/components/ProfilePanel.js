@@ -22,15 +22,19 @@ class ProfilePanel extends Component {
         const display = this.props.username
             ? (
                 <UncontrolledDropdown nav inNavbar>
-                    <DropdownToggle color="link">
-                        <img src="/assets/images/user.png" alt="user-options"/>
+                    <DropdownToggle color="link" nav>
+                        <img src="/assets/images/user.png" alt="user-options" />
                     </DropdownToggle>
                     <DropdownMenu right>
                         <DropdownItem>
-                            <NavLink href={`/5b40bdc870217628046ed32b/profile`} >Profile</NavLink>
+                            <NavLink href={`/5b40bdc870217628046ed32b/profile`}>
+                                {this.props.username}
+                            </NavLink>
                         </DropdownItem>
                         <DropdownItem onClick={this.handleSignoutClicked}>
-                            Sign out
+                            <NavLink href="#">
+                                Sign out
+                            </NavLink>
                         </DropdownItem>
                     </DropdownMenu>
                 </UncontrolledDropdown>
@@ -50,7 +54,7 @@ class ProfilePanel extends Component {
                     errorMessage={this.props.errorMessage}
                     successMessage={this.props.successMessage}
                 />
-                {display}   
+                {display}
             </div>
         );
     }

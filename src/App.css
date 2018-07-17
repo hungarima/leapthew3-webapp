@@ -89,7 +89,7 @@ button#upvote:hover {
     color: white;
 }
 
-.main-screen .navbar li.nav-item .profile-panel .nav-link{
+.main-screen .navbar li.nav-item .profile-panel .nav-item > .nav-link{
     line-height: 70px;
 }
 /* end of NavBar */
@@ -140,7 +140,7 @@ iframe {
     justify-content: space-between;
     width: 100%;
     padding: 0 50px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 nav.simple-navbar .home-button{
@@ -158,7 +158,7 @@ nav.simple-navbar .home-button{
     height: 100%;
     position: relative;
 }
-.profile-panel .nav-link{
+.profile-panel .nav-item > a.nav-link{
     display: block;
     color: #6b6a6a;
     text-decoration: none;
@@ -168,14 +168,38 @@ nav.simple-navbar .home-button{
     padding: 0 1rem;
     border-top: 3px solid transparent;
 }
-.main-screen .profile-panel .nav-link:hover, nav.simple-navbar .profile-panel .nav-link:hover {
+.main-screen .profile-panel .nav-item > a.nav-link:hover{
     border-top: 3px solid #d85697;
     color: #d85697;
 }
 
-.main-screen .profile-panel .nav-link:active, nav.simple-navbar .profile-panel .nav-link:active {
+.main-screen .profile-panel .nav-item > a.nav-link:active{
     border-top: 3px solid #d85697;
     color: #d85697;
+}
+
+.profile-panel li {
+    list-style-type: none;
+    height: 100%;
+    display: block;
+}
+
+.profile-panel li.nav-item .dropdown-menu{
+    background: #000000;
+    padding: 0;
+    border: none;
+}
+.profile-panel li.nav-item .dropdown-menu button.dropdown-item{
+    padding: .25rem .5rem;
+}
+.profile-panel li.nav-item .dropdown-menu button.dropdown-item:hover{
+    border-top: 3px solid #d85697;
+    color: #d85697;
+    background: #6b6a6a;
+}
+.profile-panel li.nav-item .dropdown-menu a.nav-link {
+    color: white;
+    border-top: 3px solid transparent;
 }
 
 /* end SimpleNavbar */
