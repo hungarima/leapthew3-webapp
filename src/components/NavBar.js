@@ -49,7 +49,6 @@ class NavBar extends Component {
             .then(response => {
                 this.setState({ vote: this.state.vote + 1 })
                 console.log(response);
-
             })
             .catch(error => console.log(error));
     }
@@ -58,7 +57,7 @@ class NavBar extends Component {
         axios.delete(`/api/url/${this.props.currentUrlId}/downvote`)
             .then(response => {
                 console.log(response);
-
+                this.setState({ vote: this.state.vote - 1 })
             })
             .catch(error => console.log(error));
     }
@@ -135,8 +134,13 @@ class NavBar extends Component {
                             <NavbarToggler onClick={this.toggle} />
                             <Collapse isOpen={false} navbar>
                                 <Nav className="ml-auto" navbar >
+<<<<<<< HEAD
                                     <NavItem > 
                                         <Button className="grow" id="share" color="link"><Share /></Button>
+=======
+                                    <NavItem>
+                                        <div className="grow" id="share" color="link"><Share /></div>
+>>>>>>> ec1a277b13b16b7282d6a6102568532773b94697
                                     </NavItem>
                                     <NavItem>
                                         <ProfilePanel

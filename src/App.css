@@ -59,6 +59,10 @@
     background: linear-gradient(to right, #ff3366, #f98bd9);
 }
 
+.navbar-brand .leap-button:hover {
+    background: linear-gradient(to right, #f98bd9, #ff3366);
+}
+
 .navbar-collapse ul li a {
     margin-right: 15px;
 }
@@ -105,7 +109,6 @@ button#upvote:hover {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
 }
 
 /* Iframe */
@@ -159,7 +162,6 @@ iframe {
     justify-content: space-between;
     width: 100%;
     padding: 0 50px;
-    /* overflow: hidden; */
 }
 
 nav.simple-navbar .home-button{
@@ -222,3 +224,24 @@ nav.simple-navbar .home-button{
 }
 
 /* end SimpleNavbar */
+@media screen and (max-width:768px) {
+    .navbar-flex-item--end {
+        position: relative;
+        left: 23px;
+        top: -10px;
+        margin-bottom: 70px;
+        margin-left: 60px;
+    }
+    .navbar-button-group {
+        margin-top: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .navbar-button-group a {
+        margin: 0 !important;
+    }
+    .navbar {
+        height: 130px;
+    }
+}
