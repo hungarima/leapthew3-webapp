@@ -10,7 +10,7 @@ class Register extends Component {
     };
 
     _register = () => {
-        console.log(this.state);
+        // console.log(this.state);
         this
             .props
             .onRegister(this.state.username, this.state.email, this.state.password);

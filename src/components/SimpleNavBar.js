@@ -52,7 +52,7 @@ class SimpleNavbar extends Component {
             })
             .catch(error => {
                 console.log(error.response);
-                this.setState({ errorMessage: error.response.errMsg });
+                this.setState({ errorMessage: error.response.data.errMsg });
             });
     }
 

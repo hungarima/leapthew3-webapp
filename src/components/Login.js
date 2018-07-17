@@ -9,7 +9,7 @@ class Login extends Component {
     };
 
     _login = () => {
-        console.log(this.state);
+        // console.log(this.state);
         this
             .props
             .onLogin(this.state.username, this.state.password);

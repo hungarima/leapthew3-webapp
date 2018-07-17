@@ -93,7 +93,7 @@ class NavBar extends Component {
             })
             .catch(err => {
                 console.log(err);
-                // this.setState({ errorMessage: err });
+                this.setState({ errorMessage: err.response.data.errMsg });
             });
     }
 
